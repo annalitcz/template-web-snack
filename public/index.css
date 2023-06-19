@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+.hero{
+  background-image: url('../src/istockphoto-1149135424-1024x1024-transformed.jpeg');
+  background-repeat: no-repeat;
+}
+.card-image {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-image img {
+    transition: transform 0.3s ease;
+  }
+  
+  .card-image:hover img {
+    transform: scale(1.1);
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+  }
+  
