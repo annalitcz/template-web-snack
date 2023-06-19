@@ -19,50 +19,60 @@
 </head>
 
 <body class="bg-gray-100">
-  <nav class="bg-gray-900 text-white top-0 z-50 py-3" id="home">
-    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-      <a href="../index.html" class="text-xl font-bold">Nyemil Caraka</a>
-      <div class="block sm:hidden">
-        <button id="hamburger-btn" class="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-200 hover:text-white hover:border-white">
-          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M3 6h14v2H3V6zm0 5h14v2H3v-2zm0 5h14v2H3v-2z" clip-rule="evenodd" />
-          </svg>
-        </button>
-      </div>
-      <ul class="hidden sm:flex space-x-4">
-        <li><a href="../index.html" class="hover:text-gray-400">Beranda</a></li>
-        <li><a href="produk.html" class="hover:text-gray-400">Produk</a></li>
-        <li><a href="#kontak" class="hover:text-gray-400">Kontak</a></li>
-      </ul>
-      <div class="hidden sm:block">
-        <div class="user rounded-full border-white pr-4">
-          <i class="fa-solid fa-user" style="color: #ffffff"></i>
-        </div>
-      </div>
-    </div>
-  </nav>
-  
-  <div id="sidebar" class="hidden fixed inset-y-0 right-0 w-64 bg-gray-900 text-white p-6">
-    <ul class="space-y-4">
-      <li><a href="../index.html" class="block hover:text-gray-400">Beranda</a></li>
-      <li><a href="produk.html" class="block hover:text-gray-400">Produk</a></li>
-      <li><a href="#kontak" class="block hover:text-gray-400">Kontak</a></li>
+  <!-- Navbar -->
+<nav class="bg-gray-900 text-white top-0 z-50 py-3" id="produk">
+  <div class="container mx-auto px-4 py-2 pl-2 flex justify-between items-center">
+    <a href="../index.html" class="text-xl font-bold">Nyemil <span class="text-red-600">Caraka</span></a>
+    <ul class="hidden sm:flex space-x-4">
+      <li><a href="../index.html" class="hover:text-gray-400">Beranda</a></li>
+      <li><a href="#produk" class="hover:text-gray-400">Produk</a></li>
+      <li><a href="#kontak" class="hover:text-gray-400">Kontak</a></li>
     </ul>
+    <div class="user rounded-full border-white pr-4">
+      <i class="fa-solid fa-user" style="color: #ffffff"></i>
+    </div>
+    <div class="block sm:hidden">
+      <button id="hamburger-btn" class="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-200 hover:text-white hover:border-white">
+        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 6h14v2H3V6zm0 5h14v2H3v-2zm0 5h14v2H3v-2z" clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
   </div>
-  
-  <script>
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const sidebar = document.getElementById('sidebar');
-  
-    hamburgerBtn.addEventListener('click', function() {
-      sidebar.classList.toggle('hidden');
-    });
-  </script>
-  
-  
-  
+</nav>
+
+<div id="sidebar" class="hidden fixed inset-y-0 right-0 w-64 bg-gray-900 text-white p-6">
+  <button id="close-sidebar-btn" class="absolute top-4 right-4 text-gray-200 hover:text-white">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+  <ul class="space-y-4">
+    <li><a href="../index.html" class="block hover:text-gray-400">Beranda</a></li>
+    <li><a href="#produk" class="block hover:text-gray-400">Produk</a></li>
+    <li><a href="#kontak" class="block hover:text-gray-400">Kontak</a></li>
+  </ul>
+  <div class="user rounded-full border-white pr-4">
+    <i class="fa-solid fa-user" style="color: #ffffff"></i>
+  </div>
+</div>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const closeSidebarBtn = document.getElementById('close-sidebar-btn');
+  const sidebar = document.getElementById('sidebar');
+
+  hamburgerBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('hidden');
+  });
+
+  closeSidebarBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+  });
+</script>
+
   <!-- Produk Section -->
-  <section class="py-12" id="produk-terbaru">
+  <section class="py-12">
     <div class="container mx-auto">
       <h2 class="text-3xl text-center font-bold mb-6">Produk Terbaru</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 p-5">
@@ -151,6 +161,41 @@
       </div>
     </div>
   </section>
+
+   <!-- Tombol Kembali ke Atas -->
+   <a
+   class="back-to-top fixed bottom-4 right-4 bg-green-900 text-white py-2 px-4 rounded-full hover:bg-gray-800 text-sm font-black"
+ >
+   ↑
+ </a>
+
+ <!-- Footer -->
+ <footer class="bg-gray-900 text-white text-center py-4">
+   <p>&copy; 2023 Anzz Shop. All rights reserved.</p>
+ </footer>
+ <!-- JavaScript -->
+ <script>
+   // Mendapatkan elemen tombol kembali ke atas
+   var backButton = document.querySelector(".back-to-top");
+
+   // Menampilkan tombol kembali ke atas saat pengguna sudah di bagian bawah halaman
+   window.addEventListener("scroll", function () {
+     if (window.scrollY > window.innerHeight) {
+       backButton.style.display = "block";
+     } else {
+       backButton.style.display = "none";
+     }
+   });
+
+   // Mengatur animasi scroll halus ke bagian atas saat tombol diklik
+   backButton.addEventListener("click", function (e) {
+     e.preventDefault();
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth",
+     });
+   });
+ </script>
 </body>
 
 </html>
