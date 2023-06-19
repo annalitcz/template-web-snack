@@ -7,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .hero{
-  background-image: url('../src/istockphoto-1149135424-1024x1024-transformed.jpeg');
+  background-image: url('./src/istockphoto-1149135424-1024x1024-transformed.jpeg');
   background-repeat: no-repeat;
 }
 .card-image {
